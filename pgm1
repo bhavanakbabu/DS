@@ -1,0 +1,22 @@
+//pgm1 add n numbers using array
+
+#include<stdio.h>
+int main()
+{
+ 	int n,i,sum=0,a[50];
+	printf("Enter the number of elements :");
+	scanf("%d",&n);
+ 	if(n<=0||n>=50)
+		printf("Number of elements must be in between 0 and 50");
+	else
+	{	
+		printf("Enter the elements : ");
+		for(i=0;i<n;i++)
+		{
+		scanf("%d",&a[i]);
+		sum=sum+a[i];
+		}
+		printf("Sum of elements : %d \n",sum);
+	}
+	return 0;
+}
