@@ -1,0 +1,86 @@
+//pgm3 stack
+
+#include<stdio.h>
+void push();
+void pop();
+void display();
+int a[20],top=-1,max=5;
+int main()
+{
+	int ch1,op, ch2,x;
+    	do
+     	{
+         	printf("Enter the option \n1.Push\n2.Pop\n3.Display  : ");
+         	scanf("%d",&ch1);
+         	switch(ch1)
+         	{
+            		case 1:
+               			push();
+               			break;
+            		case 2:
+               			pop();
+               			break;
+            		case 3:
+               			display();
+               			break;
+            		default :
+               			printf("\nInvalid option.\n");
+		}
+          	printf("Do you want to continue 1/0 : ");
+          	scanf("%d",&ch2);
+          	printf("\n");
+	}while(ch2!=0);
+     	return 0;
+} 
+void push(int x)
+{
+     	if(top==max-1)
+     	{
+         	printf("\nOverflow, you can't push\n");
+         	return;
+     	}
+     	else
+     	{
+		printf("\nEnter the data : ");
+               	scanf("%d",&x);
+         	top=top+1;
+         	a[top]=x;
+     	}
+}
+void pop()
+{
+      	int x;
+      	if(top==-1)
+      	{
+          	printf("\nUnder flow, can't delete\n");
+          	return ;
+      	}
+      	else
+      	{
+          	x=a[top];
+          	printf("\nDeleted %d \n",x);
+          	top=top-1;
+      	}
+}
+void display()
+{
+     	int i;
+	if(top==-1)
+	{
+		printf("\nStack is empty\n");
+          	return ;
+      	}
+      	else
+      	{	
+     		printf("\nStack is : ");
+     		for(i=0;i<=top;i++)
+     		printf("%d ", a[i]);
+     		printf("\n");
+	}
+
+}
+
+
+
+
+
